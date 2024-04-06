@@ -93,6 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 0
+  inventory:
+    slots: []
   itemIcon: {fileID: 6229089329183728576}
   quantityText: {fileID: 8595622912403848791}
   highlight: {fileID: 0}
