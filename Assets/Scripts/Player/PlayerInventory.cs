@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
@@ -8,22 +9,18 @@ public class PlayerInventory : MonoBehaviour
     public GameObject inventoryTab;
     public InventoryScript inventoryScript;
     public UiManager uiManager;
+    private Inventory inventory;
+    public string inventoryName;
+    private SlotsUi slotsUi;
+    public ToolBarUi toolBarUi;
+    public ItemData itemData;
 
     public GameObject dropLocation;
     public void Awake()
     {
         inventoryManager = GetComponent<InventoryManager>();
-    }
-
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            if( inventoryManager.toolbar.selectedSlot.itemName == "Axe")
-            {
-                print("Axe Used");
-            }
-        }
+        inventory = GameManager.instance.player.inventoryManager.GetInventoryByName(inventoryName);
+        toolBarUi = GetComponent<ToolBarUi>();
     }
 
     public void DropItem(Item item)
@@ -46,4 +43,26 @@ public class PlayerInventory : MonoBehaviour
             DropItem(item);
         }
     }
+
+    public void Interact()
+    {
+        if( inventoryManager.toolbar.selectedSlot.itemName == "Axe")
+            {
+                print("Axe Used");
+            }
+
+            if( this.inventoryManager.toolbar.selectedSlot.itemData.type == Type.plant && inventoryManager.toolbar.selectedSlot.count >= 1)
+            {
+                inventoryManager.toolbar.selectedSlot.count --;
+                
+                if(inventoryManager.toolbar.selectedSlot.count == 0)
+                {
+                    inventoryManager.toolbar.selectedSlot.icon = null;
+                    inventoryManager.toolbar.selectedSlot.itemName = "";
+                }
+                print("Seed Used");
+                uiManager.RefreshInventoryUI("Toolbar");
+            }
+    }
+
 }

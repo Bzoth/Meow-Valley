@@ -11,6 +11,7 @@ public class InventoryScript : MonoBehaviour
 
     [SerializeField] private Canvas canvas;
     private Inventory inventory;
+    public InventoryManager inventoryManager;
 
     void Awake()
     {
@@ -24,6 +25,7 @@ public class InventoryScript : MonoBehaviour
         SetupSlots();
         Refresh();
     }
+    
 
     public void Refresh()
     {
@@ -66,6 +68,7 @@ public class InventoryScript : MonoBehaviour
         UiManager.draggedSlot = null;
         
     }
+
 
     public void SlotBeginDrag(SlotsUi slot)
     {

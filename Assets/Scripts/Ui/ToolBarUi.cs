@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ToolBarUi : MonoBehaviour
 {
-    [SerializeField] private List <SlotsUi> toolbarSlots = new List<SlotsUi>();
+    public List <SlotsUi> toolbarSlots = new List<SlotsUi>();
     private SlotsUi selectedSlot;
+    public Inventory inventory;
 
     void Start()
     {
@@ -80,3 +81,4 @@ public class ToolBarUi : MonoBehaviour
         }
     }
 }
+

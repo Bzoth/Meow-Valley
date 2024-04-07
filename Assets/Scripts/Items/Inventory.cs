@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +12,15 @@ public class Inventory
         public string itemName;
         public int count;
         public int maxAllowed;
+        public ItemData itemData;
 
         public Sprite icon;
         public Slot()
         {
             itemName = "";
             count = 0;
-            maxAllowed = 99;
+            maxAllowed = 20;
+            itemData = null;
         }
 
         public bool IsEmpty
@@ -35,7 +38,7 @@ public class Inventory
 
         public bool CanAddItem(string itemName)
         {
-            if(this.itemName == itemName &&count < maxAllowed)
+            if(this.itemName == itemName && count < maxAllowed)
             {
                 return true;
             }
@@ -46,6 +49,7 @@ public class Inventory
         {
             this.itemName = item.data.itemName;
             this.icon = item.data.icon;
+            this.maxAllowed = item.data.capacity;
             count++;
         }
 
@@ -108,7 +112,7 @@ public class Inventory
     {
         slots[index].RemoveItem();
     }
-
+    
     public void Remove(int index, int numToRemove)
     {
         if(slots[index].count >= numToRemove)
