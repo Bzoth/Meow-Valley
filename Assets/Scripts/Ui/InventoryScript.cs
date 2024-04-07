@@ -92,9 +92,19 @@ public class InventoryScript : MonoBehaviour
 
     public void SlotDrop(SlotsUi slot)
     {
-        UiManager.draggedSlot.inventory.MoveSlot(UiManager.draggedSlot.slotID, slot.slotID, slot.inventory);
-        
+
+        if(UiManager.dragSingle)
+        {
+            UiManager.draggedSlot.inventory.MoveSlot(UiManager.draggedSlot.slotID, slot.slotID, slot.inventory);
+        }
+        else
+        {
+            UiManager.draggedSlot.inventory.MoveSlot(UiManager.draggedSlot.slotID, slot.slotID, slot.inventory,
+             UiManager.draggedSlot.inventory.slots[UiManager.draggedSlot.slotID].count);
+        }
+
         GameManager.instance.uiManager.RefreshAll();
+        
     }
 
     private void MoveToMousePosition(GameObject toMove)
