@@ -21,6 +21,33 @@ public class PlayerInventory : MonoBehaviour
         inventoryManager = GetComponent<InventoryManager>();
         inventory = GameManager.instance.player.inventoryManager.GetInventoryByName(inventoryName);
         toolBarUi = GetComponent<ToolBarUi>();
+
+        itemData = null;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if(inventoryManager.toolbar.selectedSlot.type == Type.tool)
+        {
+            print("Axe Used");
+        }
+
+        if(inventoryManager.toolbar.selectedSlot.type == Type.plant && inventoryManager.toolbar.selectedSlot.count >= 1)
+        {
+            inventoryManager.toolbar.selectedSlot.count --;
+
+            if(inventoryManager.toolbar.selectedSlot.count == 0)
+            {
+                inventoryManager.toolbar.selectedSlot.icon = null;
+                inventoryManager.toolbar.selectedSlot.itemName = "";
+                Instantiate(itemData.plant, dropLocation.transform.position, Quaternion.identity);
+            }
+            print("Seed Used");
+            uiManager.RefreshInventoryUI("Toolbar");
+        }
+        }
     }
 
     public void DropItem(Item item)
@@ -46,23 +73,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void Interact()
     {
-        if( inventoryManager.toolbar.selectedSlot.itemName == "Axe")
-            {
-                print("Axe Used");
-            }
-
-            if( this.inventoryManager.toolbar.selectedSlot.itemData.type == Type.plant && inventoryManager.toolbar.selectedSlot.count >= 1)
-            {
-                inventoryManager.toolbar.selectedSlot.count --;
-                
-                if(inventoryManager.toolbar.selectedSlot.count == 0)
-                {
-                    inventoryManager.toolbar.selectedSlot.icon = null;
-                    inventoryManager.toolbar.selectedSlot.itemName = "";
-                }
-                print("Seed Used");
-                uiManager.RefreshInventoryUI("Toolbar");
-            }
+        
     }
 
 }

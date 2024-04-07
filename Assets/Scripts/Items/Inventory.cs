@@ -12,15 +12,13 @@ public class Inventory
         public string itemName;
         public int count;
         public int maxAllowed;
-        public ItemData itemData;
-
+        public Type type;
         public Sprite icon;
         public Slot()
         {
             itemName = "";
             count = 0;
             maxAllowed = 20;
-            itemData = null;
         }
 
         public bool IsEmpty
@@ -50,6 +48,7 @@ public class Inventory
             this.itemName = item.data.itemName;
             this.icon = item.data.icon;
             this.maxAllowed = item.data.capacity;
+            this.type = item.data.type;
             count++;
         }
 

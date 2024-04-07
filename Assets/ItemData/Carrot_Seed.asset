@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Carrot Seeds
   icon: {fileID: 21300000, guid: 6b057fe4a3f12b64498c0b075d334779, type: 3}
-  plant: {fileID: 0}
+  plant: {fileID: 4838048379544785587, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
   type: 0
-  isPlantable: 0
+  isPlantable: 1
   capacity: 20
