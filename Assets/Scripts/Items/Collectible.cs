@@ -15,7 +15,7 @@ public class Collectible : MonoBehaviour
             Item item = GetComponent<Item>();
             if(item != null)
             {
-                player.inventory.Add("Backpack", item);
+                player.inventoryManager.Add("Backpack", item);
                 Destroy(this.gameObject);
             }
         }

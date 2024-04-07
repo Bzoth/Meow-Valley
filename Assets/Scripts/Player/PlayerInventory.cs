@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public InventoryManager inventory;
+    public InventoryManager inventoryManager;
     public GameObject inventoryTab;
     public InventoryScript inventoryScript;
     public UiManager uiManager;
@@ -12,7 +12,18 @@ public class PlayerInventory : MonoBehaviour
     public GameObject dropLocation;
     public void Awake()
     {
-        inventory = GetComponent<InventoryManager>();
+        inventoryManager = GetComponent<InventoryManager>();
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if( inventoryManager.toolbar.selectedSlot.itemName == "Axe")
+            {
+                print("Axe Used");
+            }
+        }
     }
 
     public void DropItem(Item item)
