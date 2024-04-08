@@ -10,14 +10,11 @@ public class ItemData : ScriptableObject
     public GameObject plant;
 
     public Type type;
-
-    public bool isPlantable;
-
     public int capacity;
 }
 
 public enum Type
 {
     plant,
-    tool
+    tool,
 }

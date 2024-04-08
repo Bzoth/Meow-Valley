@@ -12,7 +12,10 @@ public class Inventory
         public string itemName;
         public int count;
         public int maxAllowed;
+        public int durability;
+
         public Type type;
+        public GameObject plant;
         public Sprite icon;
         public Slot()
         {
@@ -20,6 +23,7 @@ public class Inventory
             count = 0;
             maxAllowed = 20;
         }
+        
 
         public bool IsEmpty
         {
@@ -33,6 +37,7 @@ public class Inventory
                 return false;
             }
         }
+
 
         public bool CanAddItem(string itemName)
         {
@@ -49,13 +54,16 @@ public class Inventory
             this.icon = item.data.icon;
             this.maxAllowed = item.data.capacity;
             this.type = item.data.type;
+            this.plant = item.data.plant;
             count++;
         }
 
-        public void AddItem(string itemName, Sprite icon, int maxAllowed)
+        public void AddItem(string itemName, Sprite icon, int maxAllowed, Type type, GameObject plant)
         {
             this.itemName = itemName;
             this.icon = icon;
+            this.type = type;
+            this.plant = plant;
             count++;
             this.maxAllowed = maxAllowed;
         }
@@ -132,7 +140,7 @@ public class Inventory
         {
             for(int i = 0; i < numToMove; i++)
             {
-                toSlot.AddItem(fromSlot.itemName, fromSlot.icon, fromSlot.maxAllowed);
+                toSlot.AddItem(fromSlot.itemName, fromSlot.icon, fromSlot.maxAllowed, fromSlot.type, fromSlot.plant);
                 fromSlot.RemoveItem();
             } 
         }

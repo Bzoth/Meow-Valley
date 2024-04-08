@@ -21,8 +21,6 @@ public class PlayerInventory : MonoBehaviour
         inventoryManager = GetComponent<InventoryManager>();
         inventory = GameManager.instance.player.inventoryManager.GetInventoryByName(inventoryName);
         toolBarUi = GetComponent<ToolBarUi>();
-
-        itemData = null;
     }
 
     void Update()
@@ -30,19 +28,21 @@ public class PlayerInventory : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             if(inventoryManager.toolbar.selectedSlot.type == Type.tool)
-        {
-            print("Axe Used");
-        }
+            {
+                print(inventoryManager.toolbar.selectedSlot.itemName + " Used");
+
+                uiManager.RefreshInventoryUI("Toolbar");
+            }
 
         if(inventoryManager.toolbar.selectedSlot.type == Type.plant && inventoryManager.toolbar.selectedSlot.count >= 1)
         {
             inventoryManager.toolbar.selectedSlot.count --;
+            Instantiate(inventoryManager.toolbar.selectedSlot.plant, dropLocation.transform.position, Quaternion.identity);
 
             if(inventoryManager.toolbar.selectedSlot.count == 0)
             {
                 inventoryManager.toolbar.selectedSlot.icon = null;
                 inventoryManager.toolbar.selectedSlot.itemName = "";
-                Instantiate(itemData.plant, dropLocation.transform.position, Quaternion.identity);
             }
             print("Seed Used");
             uiManager.RefreshInventoryUI("Toolbar");

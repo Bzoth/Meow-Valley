@@ -835,7 +835,9 @@ MonoBehaviour:
       itemName: 
       count: 0
       maxAllowed: 99
+      durability: 0
       type: 0
+      plant: {fileID: 0}
       icon: {fileID: 0}
 --- !u!114 &132134658
 MonoBehaviour:
@@ -3300,7 +3302,9 @@ MonoBehaviour:
       itemName: 
       count: 0
       maxAllowed: 99
+      durability: 0
       type: 0
+      plant: {fileID: 0}
       icon: {fileID: 0}
   backpackSlotsCount: 24
   toolbar:
@@ -3309,7 +3313,9 @@ MonoBehaviour:
       itemName: 
       count: 0
       maxAllowed: 99
+      durability: 0
       type: 0
+      plant: {fileID: 0}
       icon: {fileID: 0}
   toolbarSlotsCount: 8
 --- !u!1 &449658952
@@ -6865,6 +6871,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 255515152}
     m_Modifications:
+    - target: {fileID: 3933905471888706246, guid: 1d200b31090cc03478b9c143262bcdfc, type: 3}
+      propertyPath: durability
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4544104140788020450, guid: 1d200b31090cc03478b9c143262bcdfc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.09
@@ -6909,7 +6919,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe_Collectable (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3933905471888706246, guid: 1d200b31090cc03478b9c143262bcdfc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11190,6 +11201,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 255515152}
     m_Modifications:
+    - target: {fileID: 3933905471888706246, guid: 1d200b31090cc03478b9c143262bcdfc, type: 3}
+      propertyPath: durability
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4544104140788020450, guid: 1d200b31090cc03478b9c143262bcdfc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.0316877
@@ -11234,19 +11249,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe_Collectable
       objectReference: {fileID: 0}
-    - target: {fileID: 7751162665666083060, guid: 1d200b31090cc03478b9c143262bcdfc, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7751162665666083060, guid: 1d200b31090cc03478b9c143262bcdfc, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7751162665666083060, guid: 1d200b31090cc03478b9c143262bcdfc, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3933905471888706246, guid: 1d200b31090cc03478b9c143262bcdfc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

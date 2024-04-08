@@ -16,5 +16,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: d9e76b6f36ab5a34b8385c4f61bf68f1, type: 3}
   plant: {fileID: 0}
   type: 1
-  isPlantable: 0
   capacity: 1
