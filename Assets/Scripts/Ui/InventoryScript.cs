@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -76,7 +78,7 @@ public class InventoryScript : MonoBehaviour
         UiManager.draggedIcon = Instantiate(slot.itemIcon);
         UiManager.draggedIcon.transform.SetParent(canvas.transform);
         UiManager.draggedIcon.raycastTarget = false;
-        UiManager.draggedIcon.rectTransform.sizeDelta = new Vector2(100, 100);
+        UiManager.draggedIcon.rectTransform.sizeDelta = new Vector2(80, 80);
 
         MoveToMousePosition(UiManager.draggedIcon.gameObject);
     }
@@ -88,7 +90,6 @@ public class InventoryScript : MonoBehaviour
 
     public void SlotEndDrag()
     {
-        print(UiManager.draggedIcon);
         Destroy(UiManager.draggedIcon.gameObject);
         UiManager.draggedIcon = null;
     }

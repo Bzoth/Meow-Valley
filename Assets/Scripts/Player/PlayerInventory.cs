@@ -70,10 +70,4 @@ public class PlayerInventory : MonoBehaviour
             DropItem(item);
         }
     }
-
-    public void Interact()
-    {
-        
-    }
-
 }

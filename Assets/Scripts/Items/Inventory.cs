@@ -12,7 +12,6 @@ public class Inventory
         public string itemName;
         public int count;
         public int maxAllowed;
-        public int durability;
 
         public Type type;
         public GameObject plant;
@@ -131,10 +130,10 @@ public class Inventory
         }
     }
 
-    public void MoveSlot(int fromIndex, int toUndex, Inventory toInventory, int numToMove = 1)
+    public void MoveSlot(int fromIndex, int toIndex, Inventory toInventory, int numToMove = 1)
     {
         Slot fromSlot = slots[fromIndex];
-        Slot toSlot = toInventory.slots[toUndex];
+        Slot toSlot = toInventory.slots[toIndex];
 
         if(toSlot.IsEmpty || toSlot.CanAddItem(fromSlot.itemName))
         {

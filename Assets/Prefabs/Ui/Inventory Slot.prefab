@@ -70,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3730d5cd2ae0f774b813fac1bfbf6b43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23d455d2eaceb64468ef33c384013e92, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -95,6 +95,14 @@ MonoBehaviour:
   slotID: 0
   inventory:
     slots: []
+    selectedSlot:
+      itemName: 
+      count: 0
+      maxAllowed: 20
+      durability: 0
+      type: 0
+      plant: {fileID: 0}
+      icon: {fileID: 0}
   itemIcon: {fileID: 6229089329183728576}
   quantityText: {fileID: 8595622912403848791}
   highlight: {fileID: 0}

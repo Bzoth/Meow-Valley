@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2495206583973188050}
   - component: {fileID: 3813974802226681383}
   - component: {fileID: 3570840192095802718}
-  - component: {fileID: 3933905471888706246}
   m_Layer: 0
   m_Name: Axe_Collectable
   m_TagString: Untagged
@@ -177,15 +176,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 822cd98d099c920419990e4f2d09c1d3, type: 2}
   rb2d: {fileID: 0}
---- !u!114 &3933905471888706246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4564197951660240520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6a70f150195a9e4a8fd10ec30cac300, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
