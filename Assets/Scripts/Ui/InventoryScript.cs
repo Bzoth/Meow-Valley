@@ -14,6 +14,7 @@ public class InventoryScript : MonoBehaviour
     [SerializeField] private Canvas canvas;
     private Inventory inventory;
     public InventoryManager inventoryManager;
+    public GameObject dropPanel;
 
     void Awake()
     {
@@ -131,6 +132,18 @@ public class InventoryScript : MonoBehaviour
             slot.slotID = counter;
             counter++;
             slot.inventory = inventory;
+        }
+    }
+
+    public void PanelSetActive()
+    {
+        if(dropPanel.activeSelf == true)
+        {
+            dropPanel.SetActive(false);
+        }
+        else if(dropPanel.activeSelf == false)
+        {
+            dropPanel.SetActive(true);
         }
     }
 }

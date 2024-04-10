@@ -44,7 +44,6 @@ public class PlayerInventory : MonoBehaviour
                 inventoryManager.toolbar.selectedSlot.icon = null;
                 inventoryManager.toolbar.selectedSlot.itemName = "";
             }
-            print("Seed Used");
             uiManager.RefreshInventoryUI("Toolbar");
         }
         }
