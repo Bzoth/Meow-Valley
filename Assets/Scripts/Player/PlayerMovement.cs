@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 mousePosition;
     public Transform player;
     public GameObject interactPoint;
-    public GameObject up, down, left, right;
+    public GameObject rotationPoint, up, down, left, right;
 
     [SerializeField] private string lookDirection;
 
@@ -32,28 +32,28 @@ public class PlayerMovement : MonoBehaviour
 
         mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector3 diffrenceX = new Vector3 (player.position.x , mousePosition.x);
-        Vector3 diffrenceY = new Vector3 (player.position.y , mousePosition.y);
+        Vector3 diffrenceX = new Vector3 (player.position.x - mousePosition.x, 0);
+        Vector3 diffrenceY = new Vector3 (0, player.position.y - mousePosition.y);
 
-        if(mousePosition.x < player.localPosition.x && diffrenceX.magnitude > diffrenceY.magnitude)
+        if(rb.velocity.x < 0)
         {
             interactPoint.transform.position = left.transform.position;
             lookDirection = "Left";
         }
-        if(mousePosition.x > player.localPosition.x && diffrenceX.magnitude > diffrenceY.magnitude)
+        if(rb.velocity.x > 0)
         {
             interactPoint.transform.position = right.transform.position;
             lookDirection = "Right";
         }
-        if(mousePosition.x < player.localPosition.x && diffrenceX.magnitude < diffrenceY.magnitude)
+        if(rb.velocity.y < 0)
         {
             interactPoint.transform.position = down.transform.position;
-            lookDirection = "Down";
+            lookDirection = "Up";
         }
-        if(mousePosition.x > player.localPosition.x && diffrenceX.magnitude < diffrenceY.magnitude)
+        if(rb.velocity.y > 0)
         {
             interactPoint.transform.position = up.transform.position;
-            lookDirection = "Up";
+            lookDirection = "Down";
         }
 
         AnimateMovement(direction);

@@ -15,6 +15,7 @@ public class InventoryScript : MonoBehaviour
     private Inventory inventory;
     public InventoryManager inventoryManager;
     public GameObject dropPanel;
+    public GameManager gameManager;
 
     void Awake()
     {

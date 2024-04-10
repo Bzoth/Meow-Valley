@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b23f131fa023ede4abc0d9ef23ae928b, type: 3}
-  m_Name: Carrot_Seed
+  m_Name: Axe
   m_EditorClassIdentifier: 
-  itemName: Carrot Seeds
-  icon: {fileID: 21300000, guid: 6b057fe4a3f12b64498c0b075d334779, type: 3}
-  plant: {fileID: 4838048379544785587, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-  type: 0
-  capacity: 20
+  itemName: Axe
+  icon: {fileID: -1496532593, guid: f81be32b8734d07448f6251e53ca45ed, type: 3}
+  plant: {fileID: 0}
+  type: 1
+  capacity: 1
