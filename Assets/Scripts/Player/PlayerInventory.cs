@@ -14,6 +14,13 @@ public class PlayerInventory : MonoBehaviour
     private SlotsUi slotsUi;
     public ToolBarUi toolBarUi;
     public ItemData itemData;
+    public PlayerMovement playerMovement;
+
+
+
+
+    bool canHarvest = true;
+    public GameObject point;
 
     public GameObject dropLocation;
     public void Awake()
@@ -30,23 +37,40 @@ public class PlayerInventory : MonoBehaviour
             if(inventoryManager.toolbar.selectedSlot.type == Type.tool)
             {
                 print(inventoryManager.toolbar.selectedSlot.itemName + " Used");
+            }
+
+            if(inventoryManager.toolbar.selectedSlot.type == Type.plant && inventoryManager.toolbar.selectedSlot.count >= 1)
+            {
+                inventoryManager.toolbar.selectedSlot.count --;
+                Instantiate(inventoryManager.toolbar.selectedSlot.plant, dropLocation.transform.position, Quaternion.identity);
+
+                if(inventoryManager.toolbar.selectedSlot.count == 0)
+                {
+                    inventoryManager.toolbar.selectedSlot.icon = null;
+                    inventoryManager.toolbar.selectedSlot.itemName = "";
+                }
 
                 uiManager.RefreshInventoryUI("Toolbar");
             }
+        }
 
-        if(inventoryManager.toolbar.selectedSlot.type == Type.plant && inventoryManager.toolbar.selectedSlot.count >= 1)
+        
+
+        if(Input.GetKeyDown(KeyCode.F))
         {
-            inventoryManager.toolbar.selectedSlot.count --;
-            Instantiate(inventoryManager.toolbar.selectedSlot.plant, dropLocation.transform.position, Quaternion.identity);
-
-            if(inventoryManager.toolbar.selectedSlot.count == 0)
+            if(canHarvest == true)
             {
-                inventoryManager.toolbar.selectedSlot.icon = null;
-                inventoryManager.toolbar.selectedSlot.itemName = "";
+                StartCoroutine(HarvestTimer());
             }
-            uiManager.RefreshInventoryUI("Toolbar");
         }
-        }
+        
+    }
+
+    IEnumerator HarvestTimer()
+    {
+        point.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        point.SetActive(false);
     }
 
     public void DropItem(Item item)

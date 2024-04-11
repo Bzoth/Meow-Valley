@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Carrot
   m_EditorClassIdentifier: 
   growTime: 5
-  harvest: {fileID: 4838048379544785587, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-  tier0: {fileID: 0}
-  tier1: {fileID: 0}
-  tier2: {fileID: 0}
-  tier3: {fileID: 0}
+  harvest: {fileID: 4564197951660240520, guid: 1d200b31090cc03478b9c143262bcdfc, type: 3}
+  tier0: {fileID: 2078995463, guid: b8c3720d19ee8f641a9929af247121e9, type: 3}
+  tier1: {fileID: 2105797113, guid: b8c3720d19ee8f641a9929af247121e9, type: 3}
+  tier2: {fileID: -1529452297, guid: b8c3720d19ee8f641a9929af247121e9, type: 3}
+  tier3: {fileID: -1529452297, guid: b8c3720d19ee8f641a9929af247121e9, type: 3}

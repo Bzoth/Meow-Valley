@@ -32,28 +32,33 @@ public class PlayerMovement : MonoBehaviour
 
         mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector3 diffrenceX = new Vector3 (player.position.x - mousePosition.x, 0);
-        Vector3 diffrenceY = new Vector3 (0, player.position.y - mousePosition.y);
+        Vector2 diffrence= new Vector2 (player.position.x - mousePosition.x, player.position.y - mousePosition.y);
 
-        if(rb.velocity.x < 0)
+        if(mousePosition.x < player.position.x && Mathf.Abs(diffrence.x) > Mathf.Abs(diffrence.y))
         {
             interactPoint.transform.position = left.transform.position;
             lookDirection = "Left";
         }
-        if(rb.velocity.x > 0)
+        if(mousePosition.x > player.position.x && Mathf.Abs(diffrence.x) > Mathf.Abs(diffrence.y))
         {
             interactPoint.transform.position = right.transform.position;
             lookDirection = "Right";
         }
-        if(rb.velocity.y < 0)
+        if(mousePosition.y < player.position.y && Mathf.Abs(diffrence.x) < Mathf.Abs(diffrence.y))
         {
             interactPoint.transform.position = down.transform.position;
-            lookDirection = "Up";
+            lookDirection = "Down";
         }
-        if(rb.velocity.y > 0)
+        if(mousePosition.y > player.position.y && Mathf.Abs(diffrence.x) < Mathf.Abs(diffrence.y))
         {
             interactPoint.transform.position = up.transform.position;
-            lookDirection = "Down";
+            lookDirection = "Up";
+        }
+
+        //Delete after find a use
+        if(lookDirection == "Test")
+        {
+            print("Test");
         }
 
         AnimateMovement(direction);

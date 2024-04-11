@@ -53,6 +53,7 @@ public class InventoryScript : MonoBehaviour
     {
         Item itemToDrop = GameManager.instance.itemManager.GetItemByName(inventory.slots[UiManager.draggedSlot.slotID].itemName);
 
+
         if(itemToDrop != null)
         {
             if(UiManager.dragSingle )
