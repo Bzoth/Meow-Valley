@@ -13,6 +13,7 @@ public class Inventory
         public int count;
         public int maxAllowed;
 
+        public int slotMax = 0;
         public Type type;
         public GameObject plant;
         public Sprite icon;
@@ -40,11 +41,11 @@ public class Inventory
 
         public bool CanAddItem(string itemName)
         {
-            if(this.itemName == itemName && count < maxAllowed)
+            if(this.itemName == itemName && count < maxAllowed && slotMax < 24)
             {
                 return true;
             }
-            return false;
+            return false;  
         }
 
         public void AddItem(Item item)
@@ -90,6 +91,17 @@ public class Inventory
         {
             Slot slot = new Slot();
             slots.Add(slot);
+        }
+    }
+
+    public void MaxCapacity()
+    {
+        for(int z = 0; z < slots.Count; z++)
+        {
+            if(slots[z].itemName != "")
+            {
+                // use slotMax
+            }
         }
     }
 

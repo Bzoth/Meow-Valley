@@ -3527,7 +3527,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a070ba33ba6d4474cb0dd9a759064c63, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19366,63 +19366,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 255515152}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2025717273
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1282922073141944107, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.289561
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282922073141944107, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.647335
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282922073141944107, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282922073141944107, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282922073141944107, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282922073141944107, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282922073141944107, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282922073141944107, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282922073141944107, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282922073141944107, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4838048379544785587, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
-      propertyPath: m_Name
-      value: CarrotCrop
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3a69ec8068b314d4ca5199dd0fd6837b, type: 3}
 --- !u!224 &2068754474 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9142477022072228751, guid: bb7896d14a06ce24abf54317fc561c33, type: 3}
@@ -20450,4 +20393,3 @@ SceneRoots:
   - {fileID: 440395448}
   - {fileID: 255515152}
   - {fileID: 1328075571}
-  - {fileID: 2025717273}
